@@ -24,7 +24,7 @@ jobs:
         ls
     - name: Run Java file
       run: |
-        cd /Users/runner/work/macos-test/macos-test/src/main/java/org/bioimageanalysis/icy/deeplearning/example
+        cd /Users/runner/work/macos-test/macos-test/src/main/java
         pwd
         ls
         javac org/bioimageanalysis/icy/deeplearning/example/ExampleGithub.java
