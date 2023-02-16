@@ -22,13 +22,19 @@ jobs:
       run: |
         pwd
         ls
+    - name: Test unzip
+      run: |
+        brew install unzip
+        wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip
+        unzip sample-zip-file.zip
+        ls
     - name: Download modeltf1
       run: |
         brew install unzip
         mkdir -p modeltf1
         cd modeltf1
         wget https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
-        unizip tf_weights.zip
+        unzip tf_weights.zip
         ls
     - name: Download modeltf2
       run: |
@@ -36,7 +42,7 @@ jobs:
         mkdir -p modeltf2
         cd modeltf2
         wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
-        unizip dsb2018_paper.zip
+        unzip dsb2018_paper.zip
         ls
     - name: Download tf 1
       run: |
