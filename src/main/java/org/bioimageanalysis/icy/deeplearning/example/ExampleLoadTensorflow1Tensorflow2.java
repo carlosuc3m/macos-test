@@ -37,7 +37,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Version of the engine
 		String engineVersion = "2.4.1";
 		// Directory where all the engines are stored
-		String enginesDir = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\engines";
+		String enginesDir = "";
 		// Path to the model folder
 		String modelFolder = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\models\\dsb2018_paper";
 		// Path to the model source. The model source locally is the path to the source file defined in the 

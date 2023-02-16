@@ -44,6 +44,14 @@ jobs:
         wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.4/javacpp-1.5.4-macosx-x86_64.jar
         wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-2-interface-0.3.0/0.0.1/tensor-flow-2-interface-0.3.0-0.0.1.jar
         ls
+    - name: Build with Maven
+      run: mvn package
+    - name: Run Java file
+      run: |
+        # java -jar target/dl-model-runner-0.0.0.jar
+        java -cp  target/dl-model-runner-0.0.0.jar org.bioimageanalysis.icy.deeplearning.example.ExampleLoadTensorflow1Tensorflow2
+
+"""
     - name: Run Java file
       run: |
         cd /Users/runner/work/macos-test/macos-test/src/main/java
@@ -52,3 +60,4 @@ jobs:
         javac org/bioimageanalysis/icy/deeplearning/example/ExampleLoadTensorflow1Tensorflow2.java
         ls
         java org/bioimageanalysis/icy/deeplearning/example/ExampleLoadTensorflow1Tensorflow2
+"""
