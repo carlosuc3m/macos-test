@@ -14,5 +14,11 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+    - name: Build with Maven
+      run: mvn package
+    - name: Move to directory of the file
+      run: |
+        pwd
+        ls
     - name: Run Java file
-      run: java -cp target/classes com.example.MainClass
+      run: javac MyFile.java && java MyFile
