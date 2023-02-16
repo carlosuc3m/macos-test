@@ -23,7 +23,9 @@ jobs:
         pwd
         ls
     - name: Get directory where we are now
-      run: cd /Users/runner/work/macos-test/macos-test/src/main/java/org/bioimageanalysis/icy/deeplearning/example
+      run: |
+        cd /Users/runner/work/macos-test/macos-test/src
+        ls
     - name: Run Java file
       run: |
         pwd
