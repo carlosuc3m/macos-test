@@ -34,6 +34,7 @@ jobs:
         ls
     - name: Download tf 2
       run: |
+        brew install unzip
         mkdir -p Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
         cd Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
         wget https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
@@ -48,6 +49,7 @@ jobs:
         ls
     - name: Download modeltf2
       run: |
+        brew install unzip
         mkdir -p modeltf2
         cd modeltf2
         wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
