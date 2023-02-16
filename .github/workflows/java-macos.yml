@@ -51,7 +51,7 @@ jobs:
         # java -jar target/dl-model-runner-0.0.0.jar
         java -cp  target/dl-model-runner-0.0.0.jar org.bioimageanalysis.icy.deeplearning.example.ExampleLoadTensorflow1Tensorflow2
 
-"""
+    """
     - name: Run Java file
       run: |
         cd /Users/runner/work/macos-test/macos-test/src/main/java
@@ -60,4 +60,4 @@ jobs:
         javac org/bioimageanalysis/icy/deeplearning/example/ExampleLoadTensorflow1Tensorflow2.java
         ls
         java org/bioimageanalysis/icy/deeplearning/example/ExampleLoadTensorflow1Tensorflow2
-"""
+    """
