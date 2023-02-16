@@ -44,6 +44,20 @@ jobs:
         wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.4/javacpp-1.5.4-macosx-x86_64.jar
         wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-2-interface-0.3.0/0.0.1/tensor-flow-2-interface-0.3.0-0.0.1.jar
         ls
+    - name: Download modeltf1
+      run: |
+        mkdir -p modeltf1
+        cd modeltf1
+        wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
+        unizip dsb2018_paper.zip
+        ls
+    - name: Download modeltf2
+      run: |
+        mkdir -p modeltf2
+        cd modeltf2
+        wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
+        unizip dsb2018_paper.zip
+        ls
     - name: Build with Maven
       run: mvn package shade:shade
     - name: Run Java file
