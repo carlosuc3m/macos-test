@@ -22,12 +22,9 @@ jobs:
       run: |
         pwd
         ls
-    - name: Get directory where we are now
-      run: |
-        cd /Users/runner/work/macos-test/macos-test/src
-        ls
     - name: Run Java file
       run: |
+        cd /Users/runner/work/macos-test/macos-test/src/main/java/org/bioimageanalysis/icy/deeplearning/example
         pwd
         ls
         javac ExampleGithub.java && java ExampleGithub
