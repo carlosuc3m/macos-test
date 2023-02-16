@@ -27,6 +27,6 @@ jobs:
         cd /Users/runner/work/macos-test/macos-test/src/main/java/org/bioimageanalysis/icy/deeplearning/example
         pwd
         ls
-        javac ExampleGithub.java
+        javac org/bioimageanalysis/icy/deeplearning/example/ExampleGithub.java
         echo
-        java ExampleGithub
+        java org/bioimageanalysis/icy/deeplearning/example/ExampleGithub
