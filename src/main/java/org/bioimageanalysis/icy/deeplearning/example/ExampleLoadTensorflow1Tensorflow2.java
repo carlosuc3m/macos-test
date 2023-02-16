@@ -37,7 +37,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Version of the engine
 		String engineVersion = "2.4.1";
 		// Directory where all the engines are stored
-		String enginesDir = "";
+		String enginesDir = "/Users/runner/work/macos-test/macos-test";
 		// Path to the model folder
 		String modelFolder = "/Users/runner/work/macos-test/macos-test/modeltf2/dsb2018_paper";
 		// Path to the model source. The model source locally is the path to the source file defined in the 
@@ -91,12 +91,12 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		String engine = "tensorflow_saved_model_bundle";
 		// Version of the engine
 		// Directory where all the engines are stored
-		String enginesDir = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\engines";
+		String enginesDir = "/Users/runner/work/macos-test/macos-test";
 		// Path to the model folder
-		String modelFolder = "/Users/runner/work/macos-test/macos-test/modeltf1/dsb2018_paper";
+		String modelFolder = "/Users/runner/work/macos-test/macos-test/modeltf1/tf_weights";
 		// Path to the model source. The model source locally is the path to the source file defined in the 
 		// yaml inside the model folder
-		String modelSource = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\models\\Neuron Segmentation in 2D EM (Membrane)_02022023_175546";
+		String modelSource = "/Users/runner/work/macos-test/macos-test/modeltf1/tf_weights";
 		// Whether the engine is supported by CPu or not
 		boolean cpu = true;
 		// Whether the engine is supported by GPU or not
