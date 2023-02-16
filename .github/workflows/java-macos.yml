@@ -25,8 +25,9 @@ jobs:
     - name: Test unzip
       run: |
         brew install unzip
-        wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip
-        unzip sample-zip-file.zip
+        wget https://getsamplefiles.com/download/zip/sample-1.zip
+        ls
+        unzip sample-1.zip
         ls
     - name: Download modeltf1
       run: |
