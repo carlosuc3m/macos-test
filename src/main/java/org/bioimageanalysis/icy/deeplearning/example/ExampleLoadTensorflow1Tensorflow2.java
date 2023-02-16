@@ -39,10 +39,10 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Directory where all the engines are stored
 		String enginesDir = "";
 		// Path to the model folder
-		String modelFolder = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\models\\dsb2018_paper";
+		String modelFolder = "/Users/runner/work/macos-test/macos-test/modeltf2/dsb2018_paper";
 		// Path to the model source. The model source locally is the path to the source file defined in the 
 		// yaml inside the model folder
-		String modelSource = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\models\\dsb2018_paper";
+		String modelSource = "/Users/runner/work/macos-test/macos-test/modeltf2/dsb2018_paper";
 		// Whether the engine is supported by CPu or not
 		boolean cpu = true;
 		// Whether the engine is supported by GPU or not
@@ -93,7 +93,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Directory where all the engines are stored
 		String enginesDir = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\engines";
 		// Path to the model folder
-		String modelFolder = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\models\\Neuron Segmentation in 2D EM (Membrane)_02022023_175546";
+		String modelFolder = "/Users/runner/work/macos-test/macos-test/modeltf1/dsb2018_paper";
 		// Path to the model source. The model source locally is the path to the source file defined in the 
 		// yaml inside the model folder
 		String modelSource = "C:\\Users\\angel\\OneDrive\\Documentos\\pasteur\\git\\deep-icy\\models\\Neuron Segmentation in 2D EM (Membrane)_02022023_175546";
