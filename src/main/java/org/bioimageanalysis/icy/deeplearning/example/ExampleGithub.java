@@ -19,8 +19,8 @@ import java.io.File;
 public class ExampleGithub {
 	
 	public static void main(String[] args){
-		System.out.println(new File().getAbsolutePath());
-		for (File ff : new File().listFiles()){
+		System.out.println(new File("").getAbsolutePath());
+		for (File ff : new File("").listFiles()){
 			System.out.println(ff.getAbsolutePath());
 		}
 	}
