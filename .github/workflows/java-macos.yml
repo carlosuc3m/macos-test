@@ -22,26 +22,9 @@ jobs:
       run: |
         pwd
         ls
-    - name: Download tf 1
-      run: |
-        mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
-        cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
-        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow/1.15.0/libtensorflow-1.15.0.jar
-        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow_jni/1.15.0/libtensorflow_jni-1.15.0.jar
-        wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar
-        wget https://repo1.maven.org/maven2/org/tensorflow/proto/1.15.0/proto-1.15.0.jar
-        wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-1-interface/0.0.1/tensor-flow-1-interface-0.0.1.jar
-        ls
-    - name: Download tf 2
-      run: |
-        brew install unzip
-        mkdir -p Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
-        cd Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
-        wget https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
-        unzip tf_weights.zip
-        ls
     - name: Download modeltf1
       run: |
+        brew install unzip
         mkdir -p modeltf1
         cd modeltf1
         wget https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
@@ -54,6 +37,23 @@ jobs:
         cd modeltf2
         wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
         unizip dsb2018_paper.zip
+        ls
+    - name: Download tf 1
+      run: |
+        mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
+        cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
+        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow/1.15.0/libtensorflow-1.15.0.jar
+        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow_jni/1.15.0/libtensorflow_jni-1.15.0.jar
+        wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar
+        wget https://repo1.maven.org/maven2/org/tensorflow/proto/1.15.0/proto-1.15.0.jar
+        wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-1-interface/0.0.1/tensor-flow-1-interface-0.0.1.jar
+        ls
+    - name: Download tf 2
+      run: |
+        mkdir -p Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
+        cd Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
+        wget https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
+        unzip tf_weights.zip
         ls
     - name: Build with Maven
       run: mvn package shade:shade
