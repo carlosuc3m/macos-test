@@ -49,11 +49,16 @@ jobs:
       run: |
         mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
         cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
-        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow/1.15.0/libtensorflow-1.15.0.jar
-        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow_jni/1.15.0/libtensorflow_jni-1.15.0.jar
-        wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar
-        wget https://repo1.maven.org/maven2/org/tensorflow/proto/1.15.0/proto-1.15.0.jar
-        wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-1-interface/0.0.1/tensor-flow-1-interface-0.0.1.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8-macosx-x86_64.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow-platform/1.15.5-1.5.8/tensorflow-platform-1.15.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn-platform/0.21.5-1.5.8/mkl-dnn-platform-0.21.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp-platform/1.5.8/javacpp-platform-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8-macosx-x86_64.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8-macosx-x86_64.jar
+        wget  
         ls
     - name: Download tf 2
       run: |
