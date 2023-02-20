@@ -32,7 +32,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 	
 	
 	public static void loadAndRunTf2() throws LoadEngineException, Exception {
-		System.out.print("Running Tensorflow 2!!");
+		System.out.println("Running Tensorflow 2!!");
 		// Tag for the DL framework (engine) that wants to be used
 		String engine = "tensorflow_saved_model_bundle";
 		// Version of the engine
@@ -83,14 +83,14 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		model.closeModel();
 		inputs.stream().forEach(t -> t.close());
 		outputs.stream().forEach(t -> t.close());
-		System.out.print("Success running Tensorflow 2!!");
-		System.out.print("");
-		System.out.print("");
+		System.out.println("Success running Tensorflow 2!!");
+		System.out.println("");
+		System.out.println("");
 	}
 	
 	
 	public static void loadAndRunTf1(String engineVersion) throws LoadEngineException, Exception {
-		System.out.print("Running Tensorflow 1!!");
+		System.out.println("Running Tensorflow 1!!");
 		// Tag for the DL framework (engine) that wants to be used
 		String engine = "tensorflow_saved_model_bundle";
 		// Version of the engine
@@ -140,9 +140,9 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		model.closeModel();
 		inputs.stream().forEach(t -> t.close());
 		outputs.stream().forEach(t -> t.close());
-		System.out.print("Success running Tensorflow 1!!");
-		System.out.print("");
-		System.out.print("");
+		System.out.println("Success running Tensorflow 1!!");
+		System.out.println("");
+		System.out.println("");
 	}
 	
 	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) throws LoadEngineException, Exception {
