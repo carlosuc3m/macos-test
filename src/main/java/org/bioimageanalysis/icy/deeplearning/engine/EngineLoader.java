@@ -156,6 +156,7 @@ public class EngineLoader extends ClassLoader
 			if (!ff.getName().endsWith(".jar"))
 					continue;
 			urlList.add(ff.toURI().toURL());
+			System.out.println(ff.getAbsolutPath());
 		}
 		URL[] urls = new URL[urlList.size()];
 		urlList.toArray(urls);
