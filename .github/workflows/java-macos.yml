@@ -22,12 +22,32 @@ jobs:
       run: |
         pwd
         ls
-    - name: Test unzip
+    - name: Download tf 1
       run: |
-        brew install unzip
-        wget https://getsamplefiles.com/download/zip/sample-1.zip
+        mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
+        cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
+        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8-macosx-x86_64.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow-platform/1.15.5-1.5.8/tensorflow-platform-1.15.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn-platform/0.21.5-1.5.8/mkl-dnn-platform-0.21.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp-platform/1.5.8/javacpp-platform-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8-macosx-x86_64.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8-macosx-x86_64.jar
+        cp /Users/runner/work/macos-test/macos-test/tensorflow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
         ls
-        unzip sample-1.zip
+    - name: Download tf 2
+      run: |
+        mkdir -p Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
+        cd Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
+        wget https://repo1.maven.org/maven2/org/tensorflow/tensorflow-core-api/0.3.3/tensorflow-core-api-0.3.3.jar
+        wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.8.0/protobuf-java-3.8.0.jar
+        wget https://repo1.maven.org/maven2/org/tensorflow/ndarray/0.3.3/ndarray-0.3.3.jar
+        wget https://repo1.maven.org/maven2/org/tensorflow/tensorflow-core-api/0.3.3/tensorflow-core-api-0.3.3-macosx-x86_64.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.4/javacpp-1.5.4.jar
+        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.4/javacpp-1.5.4-macosx-x86_64.jar
+        wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-2-interface-0.3.0/0.0.1/tensor-flow-2-interface-0.3.0-0.0.1.jar
         ls
     - name: Download modeltf1
       run: |
@@ -44,33 +64,6 @@ jobs:
         cd modeltf2
         wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
         unzip dsb2018_paper.zip
-        ls
-    - name: Download tf 1
-      run: |
-        mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
-        cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
-        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8-macosx-x86_64.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow-platform/1.15.5-1.5.8/tensorflow-platform-1.15.5-1.5.8.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn-platform/0.21.5-1.5.8/mkl-dnn-platform-0.21.5-1.5.8.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp-platform/1.5.8/javacpp-platform-1.5.8.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8-macosx-x86_64.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8-macosx-x86_64.jar
-        wget  
-        ls
-    - name: Download tf 2
-      run: |
-        mkdir -p Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
-        cd Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
-        wget https://repo1.maven.org/maven2/org/tensorflow/tensorflow-core-api/0.3.3/tensorflow-core-api-0.3.3.jar
-        wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.8.0/protobuf-java-3.8.0.jar
-        wget https://repo1.maven.org/maven2/org/tensorflow/ndarray/0.3.3/ndarray-0.3.3.jar
-        wget https://repo1.maven.org/maven2/org/tensorflow/tensorflow-core-api/0.3.3/tensorflow-core-api-0.3.3-macosx-x86_64.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.4/javacpp-1.5.4.jar
-        wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.4/javacpp-1.5.4-macosx-x86_64.jar
-        wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-2-interface-0.3.0/0.0.1/tensor-flow-2-interface-0.3.0-0.0.1.jar
         ls
     - name: Build with Maven
       run: mvn package shade:shade
