@@ -16,7 +16,7 @@ jobs:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '17'
         
-    - name: Build with Maven 
+    - name: Build with Maven
       run: mvn package
     - name: Get directory where we are now
       run: |
