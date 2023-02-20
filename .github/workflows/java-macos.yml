@@ -35,7 +35,7 @@ jobs:
         wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8.jar
         wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8.jar
         wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn/0.21.5-1.5.8/mkl-dnn-0.21.5-1.5.8-macosx-x86_64.jar
-        cp /Users/runner/work/macos-test/macos-test/tensorflow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
+        cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
         ls
     - name: Download tf 2
       run: |
