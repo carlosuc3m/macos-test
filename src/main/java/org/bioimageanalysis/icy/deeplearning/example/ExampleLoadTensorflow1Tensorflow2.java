@@ -137,8 +137,11 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		model.runModel(inputs, outputs);
 		System.out.println(Util.average(Util.asDoubleArray(outputs.get(0).getData())));
 		// The result is stored in the list of tensors "outputs"
+		System.out.println("Closing model!!");
 		model.closeModel();
+		System.out.println("Closing inputs!!");
 		inputs.stream().forEach(t -> t.close());
+		System.out.println("Closing outputs!!");
 		outputs.stream().forEach(t -> t.close());
 		System.out.println("Success running Tensorflow 1!!");
 		System.out.println("");
@@ -147,7 +150,6 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 	
 	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) throws LoadEngineException, Exception {
 		System.out.println("Start test");
-		loadAndRunTf1("1.15.0");
 		loadAndRunTf1("1.15.0");
 		loadAndRunTf2();
 		loadAndRunTf1("1.15.0");
