@@ -54,6 +54,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// REGARD THAT the engine folders need to follow a naming convention
 		EngineInfo engineInfo = createEngineInfo(engine, engineVersion, enginesDir, cpu, gpu);
 		// Load the corresponding model
+		System.out.println("Loading Tensorflow 2 model!!");
 		Model model = loadModel(modelFolder, modelSource, engineInfo);
 		// Create an image that will be the backend of the Input Tensor
 		final ImgFactory< FloatType > imgFactory = new CellImgFactory<>( new FloatType(), 5 );
