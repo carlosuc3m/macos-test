@@ -217,7 +217,9 @@ public class EngineLoader extends ClassLoader
 						// Assume that DeepLearningInterface has no arguments
 						// for the constructor
 						System.out.println("Loading interface!!");
-						return ( DeepLearningEngineInterface ) c.getDeclaredConstructor().newInstance();
+						DeepLearningEngineInterface dd = ( DeepLearningEngineInterface ) c.getDeclaredConstructor().newInstance();
+						System.out.println("Loaded!!");
+						return dd;
 					}
 				}
 				// REmove references
