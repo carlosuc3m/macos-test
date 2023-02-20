@@ -142,6 +142,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) throws LoadEngineException, Exception {
 		System.out.println("Start test");
 		loadAndRunTf2();
+		loadAndRunTf2();
 		loadAndRunTf1("1.15.0");
 		loadAndRunTf1("1.15.0");
 		loadAndRunTf2();
