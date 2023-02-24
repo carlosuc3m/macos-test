@@ -22,7 +22,7 @@ import net.imglib2.util.Util;
  *  - Tf1: https://bioimage.io/#/?tags=Neuron%20Segmentation%20in%202D%20EM%20%28Membrane%29&id=10.5281%2Fzenodo.5817052
  *  - Tf2: https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
  * 
- * It also requires the installation of a TF1 and a TF2 engine 
+ * It also requires the installation of a TF1 and a TF2 engine
  * 
  * 
  * @author Carlos Garcia Lopez de Haro
@@ -135,7 +135,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Run the model on the input tensors. THe output tensors 
 		// will be rewritten with the result of the execution
 		System.out.println(Util.average(Util.asDoubleArray(outputs.get(0).getData())));
-		model.runModel(inputs, outputs);
+		//model.runModel(inputs, outputs);
 		System.out.println(Util.average(Util.asDoubleArray(outputs.get(0).getData())));
 		// The result is stored in the list of tensors "outputs"
 		System.out.println("Closing model!!");
