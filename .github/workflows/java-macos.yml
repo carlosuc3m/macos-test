@@ -26,11 +26,10 @@ jobs:
       run: |
         mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
         cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu
-        wget wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow/1.15.0/libtensorflow-1.15.0.jar
+        wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow/1.15.0/libtensorflow-1.15.0.jar
         wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow_jni/1.15.0/libtensorflow_jni-1.15.0.jar
         wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar
         wget https://repo1.maven.org/maven2/org/tensorflow/proto/1.15.0/proto-1.15.0.jar
-        wget https://icy-nexus.pasteur.fr/repository/Icy/org/bioimageanalysis/icy/tensor-flow-1-interface/0.0.1/tensor-flow-1-interface-0.0.1.jar
         cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
         ls
     - name: Download tf 1-aux
