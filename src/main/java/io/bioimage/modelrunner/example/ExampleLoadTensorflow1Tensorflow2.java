@@ -181,18 +181,14 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 	}
 	
 	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) {
-		try{
-			System.out.println(getTemporaryDir());
-			loadAndRunTf1();
-			loadAndRunTf1();
-			loadAndRunTf2();
-			loadAndRunTf1();
-			loadAndRunTf2();
-			loadAndRunTf2();
-			loadAndRunTf2();
-		} catch (Exception ex){
-			System.out.println("CatchedEXception");
-		}
+		System.out.println(getTemporaryDir());
+		loadAndRunTf1();
+		loadAndRunTf1();
+		loadAndRunTf2();
+		loadAndRunTf1();
+		loadAndRunTf2();
+		loadAndRunTf2();
+		loadAndRunTf2();
 	}
 	
 	/**
