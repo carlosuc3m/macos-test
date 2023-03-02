@@ -6,7 +6,10 @@ on:
     branches: [ main ]
 jobs:
   build-and-run:
-    runs-on: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -31,22 +34,22 @@ jobs:
         cd engines
         ls
     - name: Install unzip
-        run: |
-          if [[ "$OSTYPE" == "darwin"* ]]; then
-            brew install unzip
-          elif [[ "$OSTYPE" == "win"* ]]; then
-            wget https://downloads.sourceforge.net/project/gnuwin32/unzip/6.0-1/unzip-6.0-1-bin.zip -O unzip.zip
-            mkdir unzip
-            Expand-Archive unzip.zip -DestinationPath unzip
-            setx PATH "$env:PATH;$(Get-Location)\unzip\bin" /M
-          fi
+      run: |
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+          brew install unzip
+        elif [[ "$OSTYPE" == "win"* ]]; then
+          curl -O https://downloads.sourceforge.net/project/gnuwin32/unzip/6.0-1/unzip-6.0-1-bin.zip -O unzip.zip
+          mkdir unzip
+          Expand-Archive unzip.zip -DestinationPath unzip
+          setx PATH "$env:PATH;$(Get-Location)\unzip\bin" /M
+        fi
 
     - name: Download modeltf1
       run: |
         #brew install unzip
         mkdir -p modeltf1
         cd modeltf1
-        wget https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
+        curl -O https://zenodo.org/api/files/5a9cfb56-3a5d-4796-986d-8f46b7987b92/tf_weights.zip
         unzip tf_weights.zip
         ls
     - name: Download modeltf2
@@ -54,15 +57,24 @@ jobs:
         #brew install unzip
         mkdir -p modeltf2
         cd modeltf2
-        wget https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
+        curl -O https://github.com/stardist/stardist-icy/raw/main/src/main/resources/models/2D/dsb2018_paper.zip
         unzip dsb2018_paper.zip
         ls
     - name: Build with Maven
       run: mvn package shade:shade
     - name: Run Java file
       run: |
-        ls /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/
+        ls ${{ matrix.temp }}
         # java -jar target/dl-model-runner-0.0.0.jar
-        java -cp  target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
-        ls /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/
+        if [[ "$OSTYPE" == "win"* ]]; then
+          java -cp  target\dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+        else; then
+          java -cp  target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+        fi
+        ls ${{ matrix.temp }}
+      env:
+          temp:
+            macos-latest: /Users/runner/work/_temp
+            ubuntu-latest: ${{ runner.temp }}
+            windows-latest: ${{ env.TEMP }}\\runner\\$(echo ${{ runner.os }} | tr '[:upper:]' '[:lower:]')_$(echo ${{ runner.architecture }} | tr '[:upper:]' '[:lower:]')\\_temp
 
