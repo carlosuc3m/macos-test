@@ -31,12 +31,12 @@ jobs:
         wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar
         wget https://repo1.maven.org/maven2/org/tensorflow/proto/1.15.0/proto-1.15.0.jar
         wget https://maven.scijava.org/service/local/repositories/snapshots/content/io/bioimage/dl-modelrunner-tensorflow-1/0.1.1-SNAPSHOT/dl-modelrunner-tensorflow-1-0.1.1-20230302.131459-10.jar
-        #cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
+        #cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
         ls
     - name: Download tf 1-aux
       run: |
-        mkdir -p Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu2
-        cd Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu2
+        mkdir -p tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu2
+        cd tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu2
         wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow-platform/1.15.5-1.5.8/tensorflow-platform-1.15.5-1.5.8.jar
         wget https://repo1.maven.org/maven2/org/bytedeco/mkl-dnn-platform/0.21.5-1.5.8/mkl-dnn-platform-0.21.5-1.5.8.jar
         wget https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.8/javacpp-1.5.8.jar
@@ -46,12 +46,12 @@ jobs:
         wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8.jar
         wget https://repo1.maven.org/maven2/org/bytedeco/tensorflow/1.15.5-1.5.8/tensorflow-1.15.5-1.5.8-macosx-x86_64.jar
         wget https://repo1.maven.org/maven2/org/bytedeco/javacpp-platform/1.5.8/javacpp-platform-1.5.8.jar
-        cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/Tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu2/ 
+        cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu2/ 
         ls
     - name: Download tf 2
       run: |
-        mkdir -p Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
-        cd Tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
+        mkdir -p tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
+        cd tensorflow-2.4.1-0.3.3-macosx-x86_64-cpu
         wget https://repo1.maven.org/maven2/org/tensorflow/tensorflow-core-api/0.3.3/tensorflow-core-api-0.3.3.jar
         wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.8.0/protobuf-java-3.8.0.jar
         wget https://repo1.maven.org/maven2/org/tensorflow/ndarray/0.3.3/ndarray-0.3.3.jar
@@ -81,5 +81,5 @@ jobs:
     - name: Run Java file
       run: |
         # java -jar target/dl-model-runner-0.0.0.jar
-        java -cp  target/dl-model-runner-0.0.0.jar org.bioimageanalysis.icy.deeplearning.example.ExampleLoadTensorflow1Tensorflow2
+        java -cp  target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
 

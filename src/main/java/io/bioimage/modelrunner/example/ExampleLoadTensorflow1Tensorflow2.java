@@ -178,6 +178,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 	}
 	
 	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) throws LoadEngineException, Exception {
+		System.out.println(getTemporaryDir());
 		loadAndRunTf1();
 		loadAndRunTf2();
 	}
@@ -219,5 +220,33 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		Model model = Model.createDeepLearningModel(modelFolder, modelSource, engineInfo);
 		model.loadModel();
 		return model;
+	}
+
+
+	
+	/**
+	 * Get temporary directory to perform the interprocessing communication in MacOSX intel
+	 * @return the tmp dir
+	 * @throws IOException
+	 */
+	private static String getTemporaryDir() throws IOException {
+		String tmpDir;
+		if (System.getenv("temp") != null
+			&& Files.isWritable(Paths.get(System.getenv("temp")))) {
+			return System.getenv("temp");
+		} else if (System.getenv("TEMP") != null
+			&& Files.isWritable(Paths.get(System.getenv("TEMP")))) {
+			return System.getenv("TEMP");
+		} else if (System.getenv("tmp") != null
+			&& Files.isWritable(Paths.get(System.getenv("tmp")))) {
+			return System.getenv("tmp");
+		} else if (System.getenv("TMP") != null
+			&& Files.isWritable(Paths.get(System.getenv("TMP")))) {
+			return System.getenv("TMP");
+		} else if (System.getProperty("java.io.tmpdir") != null 
+				&& Files.isWritable(Paths.get(System.getProperty("java.io.tmpdir")))) {
+			return System.getProperty("java.io.tmpdir");
+		}
+		return "/Users/runner/work/macos-test/macos-test/tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu";
 	}
 }
