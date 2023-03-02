@@ -80,6 +80,8 @@ jobs:
       run: mvn package shade:shade
     - name: Run Java file
       run: |
+        ls /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/
         # java -jar target/dl-model-runner-0.0.0.jar
         java -cp  target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+        ls /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/
 
