@@ -63,12 +63,16 @@ jobs:
     - name: Build with Maven
       run: mvn package shade:shade
     - name: Run Java file
+      env:
+        temp:
+          macos-latest: /Users/runner/work/_temp
+          ubuntu-latest: ${{ runner.temp }}
+          windows-latest: ${{ env.TEMP }}\\runner\\$(echo ${{ runner.os }} | tr '[:upper:]' '[:lower:]')_$(echo ${{ runner.architecture }} | tr '[:upper:]' '[:lower:]')\\_temp
       run: |
-        # java -jar target/dl-model-runner-0.0.0.jar
+        ls ${{ matrix.temp }}
         if [[ "$OSTYPE" == "win"* ]]; then
-          java -cp  target\dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
-        else; then
-          java -cp  target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+          java -cp target\\dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+        else
+          java -cp target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
         fi
-      
-
+        ls ${{ matrix.temp }}
