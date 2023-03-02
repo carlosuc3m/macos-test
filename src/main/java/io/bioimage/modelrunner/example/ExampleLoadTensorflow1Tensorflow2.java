@@ -191,7 +191,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 			loadAndRunTf2();
 			loadAndRunTf2();
 		} catch (Exception ex){
-			System.out.println("CatchedEXception")
+			System.out.println("CatchedEXception");
 		}
 	}
 	
