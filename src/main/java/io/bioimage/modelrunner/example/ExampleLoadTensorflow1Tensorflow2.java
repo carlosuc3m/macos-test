@@ -65,8 +65,8 @@ import net.imglib2.util.Util;
 public class ExampleLoadTensorflow1Tensorflow2 {
 	
 	private static final String CWD = System.getProperty("user.dir");
-	private static final String ENGINES_DIR = new File(CWD, "engines").getAbsolutePath();
-	private static final String MODELS_DIR = new File(CWD, "models").getAbsolutePath();
+	private static final String ENGINES_DIR = new File("").getAbsolutePath();
+	private static final String MODELS_DIR = new File("").getAbsolutePath();
 	
 	public static void loadAndRunTf2() throws LoadEngineException, Exception {
 		// Tag for the DL framework (engine) that wants to be used
@@ -76,10 +76,10 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Directory where all the engines are stored
 		String enginesDir = ENGINES_DIR;
 		// Path to the model folder
-		String modelFolder = new File(MODELS_DIR, "dsb2018_paper").getAbsolutePath();
+		String modelFolder = new File(MODELS_DIR, "modeltf2").getAbsolutePath();
 		// Path to the model source. The model source locally is the path to the source file defined in the 
 		// yaml inside the model folder
-		String modelSource = new File(MODELS_DIR, "dsb2018_paper").getAbsolutePath();
+		String modelSource = new File(MODELS_DIR, "modeltf2").getAbsolutePath();
 		// Whether the engine is supported by CPu or not
 		boolean cpu = true;
 		// Whether the engine is supported by GPU or not
@@ -131,7 +131,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Directory where all the engines are stored
 		String enginesDir = ENGINES_DIR;
 		// Path to the model folder
-		String modelFolder = new File(MODELS_DIR, "Neuron Segmentation in 2D EM (Membrane)_02022023_175546").getAbsolutePath();
+		String modelFolder = new File(MODELS_DIR, "modeltf1").getAbsolutePath();
 		// Path to the model source. The model source locally is the path to the source file defined in the 
 		// yaml inside the model folder
 		String modelSource = modelFolder;
