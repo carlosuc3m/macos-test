@@ -33,6 +33,9 @@
 package io.bioimage.modelrunner.example;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -222,8 +225,6 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		return model;
 	}
 
-
-	
 	/**
 	 * Get temporary directory to perform the interprocessing communication in MacOSX intel
 	 * @return the tmp dir
