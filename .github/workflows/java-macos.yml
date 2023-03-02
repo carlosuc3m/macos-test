@@ -30,7 +30,7 @@ jobs:
         wget https://repo1.maven.org/maven2/org/tensorflow/libtensorflow_jni/1.15.0/libtensorflow_jni-1.15.0.jar
         wget https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar
         wget https://repo1.maven.org/maven2/org/tensorflow/proto/1.15.0/proto-1.15.0.jar
-        wget https://maven.scijava.org/service/local/repositories/snapshots/content/io/bioimage/dl-modelrunner-tensorflow-1/0.1.1-SNAPSHOT/dl-modelrunner-tensorflow-1-0.1.1-20230302.134254-11.jar
+        wget https://maven.scijava.org/service/local/repositories/snapshots/content/io/bioimage/dl-modelrunner-tensorflow-1/0.1.1-SNAPSHOT/dl-modelrunner-tensorflow-1-0.1.1-20230302.135946-12.jar
         #cp /Users/runner/work/macos-test/macos-test/tensor-flow-1-interface-0.0.1.jar /Users/runner/work/macos-test/macos-test/tensorflow-1.15.0-1.15.0-macosx-x86_64-cpu/ 
         ls
     - name: Download tf 1-aux
