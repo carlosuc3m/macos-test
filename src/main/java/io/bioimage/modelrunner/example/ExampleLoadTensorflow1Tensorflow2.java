@@ -180,15 +180,19 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		System.out.println("Success running Tensorflow 1!!");
 	}
 	
-	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) throws LoadEngineException, Exception {
+	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) {
 		System.out.println(getTemporaryDir());
-		loadAndRunTf1();
-		loadAndRunTf1();
-		loadAndRunTf2();
-		loadAndRunTf1();
-		loadAndRunTf2();
-		loadAndRunTf2();
-		loadAndRunTf2();
+		try{
+			loadAndRunTf1();
+			loadAndRunTf1();
+			loadAndRunTf2();
+			loadAndRunTf1();
+			loadAndRunTf2();
+			loadAndRunTf2();
+			loadAndRunTf2();
+		} catch (Exception ex){
+			System.out.println("CatchedEXception")
+		}
 	}
 	
 	/**
