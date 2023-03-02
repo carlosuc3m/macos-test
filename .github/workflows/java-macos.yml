@@ -15,12 +15,20 @@ jobs:
       with:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '17'
-        
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
     - name: Build with Maven
       run: mvn package
     - name: Get directory where we are now
       run: |
         pwd
+        ls
+    - name: Download engines
+      run: |
+        python download_engines.py
+        cd engines
         ls
     - name: Download tf 1
       run: |
