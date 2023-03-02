@@ -68,7 +68,7 @@ import net.imglib2.util.Util;
 public class ExampleLoadTensorflow1Tensorflow2 {
 	
 	private static final String CWD = System.getProperty("user.dir");
-	private static final String ENGINES_DIR = new File("").getAbsolutePath();
+	private static final String ENGINES_DIR = new File(CWD, "engines").getAbsolutePath();
 	private static final String MODELS_DIR = new File("").getAbsolutePath();
 	
 	public static void loadAndRunTf2() throws LoadEngineException, Exception {
