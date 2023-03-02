@@ -122,7 +122,7 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		model.closeModel();
 		inputs.stream().forEach(t -> t.close());
 		outputs.stream().forEach(t -> t.close());
-		System.out.print("Success running Tensorflow 2!!");
+		System.out.println("Success running Tensorflow 2!!");
 	}
 	
 	
@@ -177,12 +177,17 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		model.closeModel();
 		inputs.stream().forEach(t -> t.close());
 		outputs.stream().forEach(t -> t.close());
-		System.out.print("Success running Tensorflow 1!!");
+		System.out.println("Success running Tensorflow 1!!");
 	}
 	
 	public static < T extends RealType< T > & NativeType< T > > void main(String[] args) throws LoadEngineException, Exception {
 		System.out.println(getTemporaryDir());
 		loadAndRunTf1();
+		loadAndRunTf1();
+		loadAndRunTf2();
+		loadAndRunTf1();
+		loadAndRunTf2();
+		loadAndRunTf2();
 		loadAndRunTf2();
 	}
 	
