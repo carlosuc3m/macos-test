@@ -91,9 +91,7 @@ jobs:
       run: |
         ls
     - name: Commit file to repository
-      run: |
-        git config --global user.email "100329787@alumnos.uc3m.es"
-        git config --global user.name "carlosuc3m"
-        git add /Users/runner/work/macos-test/macos-test/test.tif
-        git commit -m "Add new file created during action"
-        git push
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+          commit_message: Changed files
+
