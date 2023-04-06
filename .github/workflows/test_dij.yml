@@ -24,7 +24,7 @@ jobs:
         curl -O https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
         unzip fiji-macosx.zip
         ls
-        cd fiji-macosx/Fiji.App
+        cd Fiji.App
         ls
     - name: Download pt
       run: |
