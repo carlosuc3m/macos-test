@@ -29,6 +29,7 @@ jobs:
     - name: Download pt
       run: |
         pwd
+        ls
         mkdir -p modelpt
         cd modelpt
         curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/weights-torchscript.pt
