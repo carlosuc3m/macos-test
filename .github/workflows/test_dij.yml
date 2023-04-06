@@ -30,7 +30,10 @@ jobs:
         restore-keys: ${{ runner.os }}-weights-
     - name: Download weights file
       if: steps['Cache weights file'].outputs.cache-hit != 'true'
-      run: curl -o weights-torchscript.pt https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/weights-torchscript.pt
+      run: |
+        ${{steps['Cache weights file'].outputs.cache-hit}}
+        ${{steps['Cache weights file'].outputs}}
+        curl -o weights-torchscript.pt https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/weights-torchscript.pt
     - name: Cache Fiji file
       uses: actions/cache@v2
       with:
