@@ -41,7 +41,7 @@ jobs:
         cd Fiji.App
         mkdir -p engines
         cd engines
-        python download_engines.py
+        python /Users/runner/work/macos-test/macos-test/download_engines.py
         ls
       
 
