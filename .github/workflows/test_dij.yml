@@ -27,7 +27,8 @@ jobs:
         cd Fiji.App
         ls
     - name: See contents of fiji folder
-      run: ls Fiji.App
+      run: |
+        ls Fiji.App
     - name: Download pt
       run: |
         cd Fiji.App
