@@ -47,7 +47,7 @@ jobs:
         cd Fiji.App
         mkdir -p engines
         cd engines
-        #python /Users/runner/work/macos-test/macos-test/download_engines.py
+        # python /Users/runner/work/macos-test/macos-test/download_engines.py
         mkdir -p pytorch-1.13.1-1.13.1-macosx-x86_64-cpu
         cd pytorch-1.13.1-1.13.1-macosx-x86_64-cpu
         curl -O https://repo1.maven.org/maven2/ai/djl/pytorch/pytorch-jni/1.13.0-0.20.0/pytorch-jni-1.13.0-0.20.0.jar
