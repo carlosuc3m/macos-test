@@ -36,5 +36,12 @@ jobs:
         curl -O https://bioimage-io.github.io/collection-bioimage-io/rdfs/10.5281/zenodo.5874741/5874742/rdf.yaml
         curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/zero_mean_unit_variance.ijm
         ls
+    - name: Download engines
+      run: |
+        cd Fiji.App
+        mkdir -p engines
+        cd engines
+        python download_engines.py
+        ls
       
 
