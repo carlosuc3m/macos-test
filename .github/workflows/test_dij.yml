@@ -42,11 +42,12 @@ jobs:
         key: ${{ runner.os }}-fiji-${{ hashFiles('**/fiji-macosx.zip') }}
         restore-keys: ${{ runner.os }}-fiji-
     - name: Download Fiji file
-      if test -f /Users/runner/work/macos-test/macos-test/fiji-macosx.zip; then
-          echo "File exists"
-      else
-          curl -o fiji-macosx.zip https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
-      fi
+      run: | 
+        if test -f /Users/runner/work/macos-test/macos-test/fiji-macosx.zip; then
+            echo "File exists"
+        else
+            curl -o fiji-macosx.zip https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
+        fi
     - name: Download Fiji
       run: |
         brew install unzip
