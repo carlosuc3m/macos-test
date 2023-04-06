@@ -94,7 +94,11 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: my-artifact
-        path: test.tif
+        path: /Users/runner/work/macos-test/macos-test/test.tif
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
 
       
 
