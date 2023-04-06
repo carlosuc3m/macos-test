@@ -14,7 +14,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 engine_filter = sys.argv[1] if len(sys.argv) > 1 else ''
 version_filter = sys.argv[2] if len(sys.argv) > 2 else ''
 
-with open("src/main/resources/availableDLVersions.json") as f:
+with open("/Users/runner/work/macos-test/macos-test/src/main/resources/availableDLVersions.json") as f:
     data = json.load(f)
 
 my_os = platform.system().lower()
