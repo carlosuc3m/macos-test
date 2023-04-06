@@ -60,6 +60,7 @@ jobs:
         curl -O https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.6/slf4j-api-2.0.6.jar
     - name: Run model with macro
       run: |
+        cp DeepImageJ_-3.0.0.jar /Users/runner/work/macos-test/macos-test/Fiji.App/plugins
         /Users/runner/work/macos-test/macos-test/Fiji.App/Contents/MacOS/ImageJ-macosx --headless --console -macro /Users/runner/work/macos-test/macos-test/macro.txt
       
 
