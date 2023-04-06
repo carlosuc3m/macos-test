@@ -91,7 +91,7 @@ jobs:
       run: |
         ls
     - name: Commit file to repository
-      run: ||
+      run: |
         git config --global user.email "100329787@alumnos.uc3m.es"
         git config --global user.name "carlosuc3m"
         git add /Users/runner/work/macos-test/macos-test/test.tif
