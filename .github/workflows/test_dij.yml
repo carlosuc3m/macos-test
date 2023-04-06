@@ -22,10 +22,27 @@ jobs:
       with:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '8'
+    - name: Cache weights file
+      uses: actions/cache@v2
+      with:
+        path: weights-torchscript.pt
+        key: ${{ runner.os }}-weights-${{ hashFiles('**/weights-torchscript.pt') }}
+        restore-keys: ${{ runner.os }}-weights-
+    - name: Download weights file
+      if: steps['Cache weights file'].outputs.cache-hit != 'true'
+      run: curl -o weights-torchscript.pt https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/weights-torchscript.pt
+    - name: Cache Fiji file
+      uses: actions/cache@v2
+      with:
+        path: fiji-macosx.zip
+        key: ${{ runner.os }}-fiji-${{ hashFiles('**/fiji-macosx.zip') }}
+        restore-keys: ${{ runner.os }}-fiji-
+    - name: Download Fiji file
+      if: steps['Cache Fiji file'].outputs.cache-hit != 'true'
+      run: curl -o fiji-macosx.zip https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
     - name: Download Fiji
       run: |
         brew install unzip
-        curl -O https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
         unzip fiji-macosx.zip
         ls
         cd Fiji.App
@@ -36,8 +53,8 @@ jobs:
       run: |
         cd Fiji.App
         mkdir -p models/modelpt
+        cp weights-torchscript.pt Fiji.App/models/modelpt
         cd models/modelpt
-        curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/weights-torchscript.pt
         curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/sample_input_0.tif
         curl -O https://bioimage-io.github.io/collection-bioimage-io/rdfs/10.5281/zenodo.5874741/5874742/rdf.yaml
         curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/zero_mean_unit_variance.ijm
