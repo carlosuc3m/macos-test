@@ -90,15 +90,10 @@ jobs:
     - name: Check artifact
       run: |
         ls
-    - name: Download artifact
-      uses: actions/download-artifact@v2
+    - name: Commit file to repository
+      uses: ad-m/github-push-action@v0.6.0
       with:
-        name: my-artifact
-        path: /Users/runner/work/macos-test/macos-test/test.tif
-    - name: Download artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: my-artifact
-
-      
-
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+        commit_message: "Add example.txt"
+        directory: .
