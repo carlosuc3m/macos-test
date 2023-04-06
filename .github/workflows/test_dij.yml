@@ -39,7 +39,10 @@ jobs:
         restore-keys: ${{ runner.os }}-fiji-
     - name: Download Fiji file
       if: steps['Cache Fiji file'].outputs.cache-hit != 'true'
-      run: curl -o fiji-macosx.zip https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
+      run: |
+        ${{steps['Cache Fiji file'].outputs.cache-hit}}
+        ${{steps['Cache Fiji file'].outputs}}
+        curl -o fiji-macosx.zip https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-latest/fiji-macosx.zip
     - name: Download Fiji
       run: |
         brew install unzip
