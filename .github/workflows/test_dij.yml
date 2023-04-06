@@ -1,4 +1,4 @@
-name: DIJ on macOS
+name: DIJ on macOS 
 on:
   push:
     branches: [ main ]
