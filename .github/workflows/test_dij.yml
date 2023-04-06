@@ -90,8 +90,23 @@ jobs:
     - name: Check artifact
       run: |
         ls
-    - name: Commit file to repository
-      uses: stefanzweifel/git-auto-commit-action@v4
+    - name: Commit files
+      id: commit
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
+        git add /Users/runner/work/macos-test/macos-test/test.tif
+        if [-z "$(git status --porcelain)"]; then
+          echo "::set-output name=push::false"
+        else
+          git commit -m "Add changes" -a
+          echo "::set-output name=push::true"
+        fi
+      shell: bash
+    - name: Push changes
+      if: steps.commit.outputs.push == 'true'
+      uses: ad-m/github-push-action@master
       with:
-          commit_message: Changed files
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      
 
