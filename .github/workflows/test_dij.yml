@@ -33,7 +33,7 @@ jobs:
       run: |
         ${{steps['Cache weights file'].outputs.cache-hit}}
         ${{steps['Cache weights file'].outputs}}
-        curl -o weights-torchscript.pt https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/weights-torchscript.pt
+        curl -o weights-torchscript.pt https://zenodo.org/api/files/a7eb8d94-9217-4276-8b0d-ff88e1ac78c7/weights-torchscript.pt
     - name: Cache Fiji file
       uses: actions/cache@v2
       with:
@@ -60,9 +60,9 @@ jobs:
         mkdir -p Fiji.App/models/modelpt
         cp weights-torchscript.pt Fiji.App/models/modelpt
         cd Fiji.App/models/modelpt
-        curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/sample_input_0.tif
-        curl -O https://bioimage-io.github.io/collection-bioimage-io/rdfs/10.5281/zenodo.5874741/5874742/rdf.yaml
-        curl -O https://zenodo.org/api/files/a6d65a8b-4fed-453f-89f6-515a2a73a99e/zero_mean_unit_variance.ijm
+        curl -O https://zenodo.org/api/files/a7eb8d94-9217-4276-8b0d-ff88e1ac78c7/zero_mean_unit_variance.ijm
+        curl -O https://bioimage-io.github.io/collection-bioimage-io/rdfs/10.5281/zenodo.6406803/6406804/rdf.yaml
+        curl -O https://zenodo.org/api/files/a7eb8d94-9217-4276-8b0d-ff88e1ac78c7/sample_input_0.tif
         ls
     - name: Download engines
       run: |

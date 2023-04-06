@@ -1,2 +1,2 @@
 open("/Users/runner/work/macos-test/macos-test/Fiji.app/models/modelpt/sample_input_0.tif");
-run("DeepImageJ Run", "model=[Neuron Segmentation in EM (Membrane Prediction)] format=Pytorch preprocessing=[zero_mean_unit_variance.ijm] postprocessing=[no postprocessing] axes=C,Z,Y,X tile=1,40,432,432 logging=Normal");
+run("DeepImageJ Run", "model=MitchondriaEMSegmentation2D format=Pytorch preprocessing=[zero_mean_unit_variance.ijm] postprocessing=[no postprocessing] axes=C,Y,X tile=1,512,512 logging=Normal");
