@@ -87,26 +87,6 @@ jobs:
         cp DeepImageJ_-3.0.0.jar /Users/runner/work/macos-test/macos-test/Fiji.App/plugins
         cp dl-modelrunner-0.2.1-SNAPSHOT.jar /Users/runner/work/macos-test/macos-test/Fiji.App/jars
         /Users/runner/work/macos-test/macos-test/Fiji.App/Contents/MacOS/ImageJ-macosx --headless --console -macro /Users/runner/work/macos-test/macos-test/macro.txt
-    - name: Check artifact
-      run: |
-        ls
-    - name: Commit files
-      id: commit
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "github-actions"
-        git add /Users/runner/work/macos-test/macos-test/test.tif
-        if [-z "$(git status --porcelain)"]; then
-          echo "::set-output name=push::false"
-        else
-          git commit -m "Add changes" -a
-          echo "::set-output name=push::true"
-        fi
-      shell: bash
-    - name: Push changes
-      if: steps.commit.outputs.push == 'true'
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+
       
 
