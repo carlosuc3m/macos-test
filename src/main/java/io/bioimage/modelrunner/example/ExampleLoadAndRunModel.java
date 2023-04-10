@@ -70,11 +70,12 @@ public class ExampleLoadAndRunModel {
 		// Tag for the DL framework (engine) that wants to be used
 		String engine = "torchscript";
 		// Version of the engine
-		String engineVersion = "1.11.0";
+		String engineVersion = "1.13.1";
 		// Directory where all the engines are stored
 		String enginesDir = ENGINES_DIR;
 		// Path to the model folder
-		String modelFolder = new File(MODELS_DIR, "EnhancerMitochondriaEM2D_13012023_130426").getAbsolutePath();
+		String modelFolder = new File("modelpt").getAbsolutePath();
+		System.out.println(modelFolder);
 		// Path to the model source. The model source locally is the path to the source file defined in the 
 		// yaml inside the model folder
 		String modelSource = new File(modelFolder, "weights-torchscript.pt").getAbsolutePath();
