@@ -184,6 +184,7 @@ public class EngineLoader extends ClassLoader
 		ArrayList<URL> urlList = new ArrayList<URL>();
 		// TODO  remove URL[] urls = new URL[ new File( this.enginePath ).listFiles().length ];
 		// TODO remove int c = 0;
+		System.out.println(enginePath);
 		for ( File ff : new File( this.enginePath ).listFiles() )
 		{
 			if (!ff.getName().endsWith(".jar"))
