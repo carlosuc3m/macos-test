@@ -45,13 +45,13 @@ jobs:
           curl -O https://repo1.maven.org/maven2/net/imglib2/imglib2/5.13.0/imglib2-5.13.0.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/pytorch-platform/1.13.1-1.5.9-SNAPSHOT/pytorch-platform-1.13.1-1.5.9-20230404.055134-18.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/pytorch/1.13.1-1.5.9-SNAPSHOT/pytorch-1.13.1-1.5.9-20230404.071430-36.jar
-          curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/pytorch/1.13.1-1.5.9-SNAPSHOT/pytorch-1.13.1-1.5.9-20230404.071430-36-macos-x86_64.jar
+          curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/pytorch/1.13.1-1.5.9-SNAPSHOT/pytorch-1.13.1-1.5.9-20230404.071430-36-macosx-x86_64.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/javacpp-platform/1.5.9-SNAPSHOT/javacpp-platform-1.5.9-20230409.122134-298.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/javacpp/1.5.9-SNAPSHOT/javacpp-1.5.9-20230407.112849-215.jar
-          curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/javacpp/1.5.9-SNAPSHOT/javacpp-1.5.9-20230407.112849-215-macos-x86_64.jar
+          curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/javacpp/1.5.9-SNAPSHOT/javacpp-1.5.9-20230407.112849-215-macosx-x86_64.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/openblas-platform/0.3.23-1.5.9-SNAPSHOT/openblas-platform-0.3.23-1.5.9-20230409.045817-48.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/openblas/0.3.23-1.5.9-SNAPSHOT/openblas-0.3.23-1.5.9-20230404.015544-39.jar
-          curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/openblas/0.3.23-1.5.9-SNAPSHOT/openblas-0.3.23-1.5.9-20230404.015544-39-macos-x86_64.jar
+          curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/openblas/0.3.23-1.5.9-SNAPSHOT/openblas-0.3.23-1.5.9-20230404.015544-39-macosx-x86_64.jar
         elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
           echo "This is running on Windows"
           mkdir - p pytorch-1.13.0-1.13.0-windows-x86_64-cpu-gpu
