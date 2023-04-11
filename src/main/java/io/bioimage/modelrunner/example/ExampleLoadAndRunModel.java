@@ -82,7 +82,7 @@ public class ExampleLoadAndRunModel {
 		// Whether the engine is supported by CPu or not
 		boolean cpu = true;
 		// Whether the engine is supported by GPU or not
-		boolean gpu = false;
+		boolean gpu = true;
 		// Create the EngineInfo object. It is needed to load the wanted DL framework
 		// among all the installed ones. The EngineInfo loads the corresponding engine by looking
 		// at the enginesDir at searching for the folder that is named satisfying the characteristics specified.
