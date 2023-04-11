@@ -56,7 +56,7 @@ jobs:
           echo "This is running on Windows"
           mkdir - p pytorch-1.13.1-1.13.1-windows-x86_64-cpu-gpu
           cd pytorch-1.13.1-1.13.1-windows-x86_64-cpu-gpu
-          cp D:\a\macos-test\macos-test\dl-modelrunner-pytorch-javacpp-0.2.1-SNAPSHOT.jar .
+          cp D:\\a\\macos-test\\macos-test\\dl-modelrunner-pytorch-javacpp-0.2.1-SNAPSHOT.jar .
           curl -O https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
           curl -O https://repo1.maven.org/maven2/net/imglib2/imglib2/5.13.0/imglib2-5.13.0.jar
           curl -O https://oss.sonatype.org/content/repositories/snapshots/org/bytedeco/pytorch-platform/1.13.1-1.5.9-SNAPSHOT/pytorch-platform-1.13.1-1.5.9-20230404.055134-18.jar
