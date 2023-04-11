@@ -1,3 +1,3 @@
 open("/Users/runner/work/macos-test/macos-test/Fiji.app/models/tf2/sample_input_0.tif");
-run("DeepImageJ Run", "model=MitchondriaEMSegmentation2D format=Pytorch preprocessing=[zero_mean_unit_variance.ijm] postprocessing=[no postprocessing] axes=C,Y,X tile=1,512,512 logging=Normal");
+run("DeepImageJ Run", "model=[B. Sutilist bacteria segmentation - Widefield microscopy - 2D UNet] format=Tensorflow preprocessing=[per_sample_scale_range.ijm] postprocessing=[no postprocessing] axes=X,Y,C tile=512,512,1 logging=Normal");
 saveAs("Tiff", "/Users/runner/work/macos-test/macos-test/test.tif");
