@@ -67,7 +67,11 @@ jobs:
         curl -O https://zenodo.org/api/files/a7eb8d94-9217-4276-8b0d-ff88e1ac78c7/sample_input_0.tif
         ls
     - name: Download all engines:
-      run: python /Users/runner/work/macos-test/macos-test/download_engines.py
+      run: |
+        python /Users/runner/work/macos-test/macos-test/download_engines.py tensorflow 2.7.0
+        ls
+        cd engines
+        ls
     - name: Download engines
       run: |
         cd Fiji.App
