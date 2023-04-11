@@ -70,7 +70,7 @@ public class ExampleLoadAndRunModel {
 		// Tag for the DL framework (engine) that wants to be used
 		String engine = "torchscript";
 		// Version of the engine
-		String engineVersion = "1.13.1";
+		String engineVersion = "1.13.0";
 		// Directory where all the engines are stored
 		String enginesDir = ENGINES_DIR;
 		// Path to the model folder
