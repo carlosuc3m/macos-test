@@ -68,7 +68,10 @@ jobs:
         ls
     - name: Download all engines:
       run: |
+        cd Fiji.App
+        mkdir -p engines
         python /Users/runner/work/macos-test/macos-test/download_engines.py tensorflow 2.7.0
+        python /Users/runner/work/macos-test/macos-test/download_engines.py tensorflow 1.15.0
         ls
         cd engines
         ls
