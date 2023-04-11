@@ -87,6 +87,7 @@ jobs:
         else
           echo "Unknown OS"
         fi
+        pwd
         ls
     - name: Download pt model
       run: |
