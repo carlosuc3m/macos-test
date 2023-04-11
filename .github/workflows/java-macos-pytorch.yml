@@ -97,10 +97,11 @@ jobs:
     - name: Build with Maven
       run: mvn package shade:shade
     - name: Run Java file
+      shell: bash
       run: |
         # java -jar target/dl-model-runner-0.0.0.jar
         if [[ "$OSTYPE" == "win"* ]]; then
-          java -cp  target\dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadAndRunModel
+          java -cp  target\\dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadAndRunModel
         else
           java -cp  target/dl-model-runner-0.0.0.jar io.bioimage.modelrunner.example.ExampleLoadAndRunModel
         fi
