@@ -92,7 +92,7 @@ public class ExampleLoadAndRunModel {
 		Model model = loadModel(modelFolder, modelSource, engineInfo);
 		// Create an image that will be the backend of the Input Tensor
 		final ImgFactory< FloatType > imgFactory = new CellImgFactory<>( new FloatType(), 5 );
-		final Img< FloatType > img1 = imgFactory.create( 1, 1, 512, 512 );
+		final Img< FloatType > img1 = imgFactory.create( 1, 1, 256, 256 );
 		// Create the input tensor with the nameand axes given by the rdf.yaml file
 		// and add it to the list of input tensors
 		Tensor<FloatType> inpTensor = Tensor.build("input0", "bcyx", img1);
@@ -108,7 +108,7 @@ public class ExampleLoadAndRunModel {
 				"bcyx", 
 				new long[] {1, 2, 512, 512}, 
 				new FloatType());*/
-		final Img< FloatType > img2 = imgFactory.create( 1, 2, 512, 512 );
+		final Img< FloatType > img2 = imgFactory.create( 1, 2, 256, 256 );
 		Tensor<FloatType> outTensor = Tensor.build("output0", "bcyx", img2);
 		List<Tensor<?>> outputs = new ArrayList<Tensor<?>>();
 		outputs.add(outTensor);
