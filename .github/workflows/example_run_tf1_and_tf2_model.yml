@@ -21,7 +21,7 @@ jobs:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '11'
     - name: Build with Maven
-      run: mvn install
+      run: mvn package install
     - name: Run ExampleDownloadEngine.java file
       shell: bash
       run: |
