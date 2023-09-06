@@ -48,4 +48,4 @@ jobs:
     - name: Run ExampleLoadTensorflow1Tensorflow2.java file
       shell: bash
       run: |
-        mvn exec:java -Dexec.mainClass=io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+        java -cp  target/dl-model-runner-0.3.13-SNAPSHOT.jar io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
