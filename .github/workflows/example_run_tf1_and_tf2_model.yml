@@ -33,12 +33,24 @@ jobs:
         if [ "$RUNNER_OS" == "Windows" ]; then
           DESTINATION_DIR=engines\tensorflow-2.7.0-0.4.0-windows-x86_64-cpu
           copy "$SOURCE_FILE" "$DESTINATION_DIR"
+          cd engines
+          dir
+          cd tensorflow-2.7.0-0.4.0-windows-x86_64-cpu
+          dir
         elif [ "$RUNNER_OS" == "MacOS" ]; then
           DESTINATION_DIR=engines/tensorflow-2.7.0-0.4.0-macosx-x86_64-cpu
           cp -f "$SOURCE_FILE" "$DESTINATION_DIR/"
+          cd engines
+          ls
+          cd tensorflow-2.7.0-0.4.0-macosx-x86_64-cpu
+          ls
         else
           DESTINATION_DIR=engines/tensorflow-2.7.0-0.4.0-linux-x86_64-cpu
           cp -f "$SOURCE_FILE" "$DESTINATION_DIR/"
+          cd engines
+          ls
+          cd tensorflow-2.7.0-0.4.0-linux-x86_64-cpu
+          ls
         fi
     - name: Run ExampleLoadTensorflow1Tensorflow2.java file
       shell: bash
