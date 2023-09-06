@@ -27,7 +27,6 @@ jobs:
       run: |
         mvn exec:java -Dexec.mainClass=io.bioimage.modelrunner.example.ExampleDownloadEngine
     - name: Copy new file
-      shell: bash
       run: |
         # Specify the source file and destination directory
         SOURCE_FILE=dl-modelrunner-tensorflow-2b-0.3.3.jar
