@@ -459,9 +459,6 @@ public class BioimageioRepo {
 		DownloadTracker.printProgress(downloadThread, consumer);
 		List<String> badDownloads = mdt.findMissingDownloads();
 		
-		if (badDownloads.size() > 0)
-			throw new IOException("The following files of model '" + descriptor.getName()
-			+ "' where downloaded incorrectly: " + badDownloads.toString());
 		// TODO put the code below in a separated method and add a progress bar
 		if (descriptor.getWeights().getSupportedDLFrameworks()
 				.contains(EngineInfo.getBioimageioTfKey())
