@@ -38,7 +38,7 @@ jobs:
           dir
           cd tensorflow-2.7.0-0.4.0-windows-x86_64-cpu
           dir
-        elif [ "$RUNNER_OS" == "MacOS" ]; then
+        elif [ "$RUNNER_OS" == "macos" ]; then
           DESTINATION_DIR=engines/tensorflow-2.7.0-0.4.0-macosx-x86_64-cpu
           cp -f "$SOURCE_FILE" "$DESTINATION_DIR/"
           cd engines
