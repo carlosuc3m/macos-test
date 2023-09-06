@@ -81,7 +81,7 @@ public class ExampleDownloadEngine {
 		TwoParameterConsumer<String, Double> consumer = DownloadTracker.createConsumerProgress();
 		// Another option is to launch the download in a separate thread 
 		// and wait for it to end while tracking the progress using the consumer
-		System.out.println("HERE: " + ENGINES_DIR)
+		System.out.println("HERE: " + ENGINES_DIR);
 		Thread downloadThread = new Thread(() -> {
 			try {
 				// In this case, the engine downloaded is defined independently from any model
