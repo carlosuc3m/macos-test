@@ -83,11 +83,9 @@ public class ExampleLoadTensorflow1Tensorflow2 {
 		// Tag for the DL framework (engine) that wants to be used
 		String framework = "tensorflow_saved_model_bundle";
 		// Version of the engine
-		String engineVersion = "2.7.4";
+		String engineVersion = "2.7.0";
 		// Directory where all the engines are stored
 		String enginesDir = ENGINES_DIR;
-		// Download an engine that is ompatible with the model of interest
-		downloadCPUEngine(framework, engineVersion, enginesDir);
 		
 		// Name of the model of interest from the Bioimage.io model repository
 		String bmzModelName = "B. Sutilist bacteria segmentation - Widefield microscopy - 2D UNet";

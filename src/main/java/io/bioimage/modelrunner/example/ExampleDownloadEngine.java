@@ -79,11 +79,6 @@ public class ExampleDownloadEngine {
 		// correspond to the file being downloaded and the value corresponds
 		// to the fraction of file that has already been downloaded.
 		TwoParameterConsumer<String, Double> consumer = DownloadTracker.createConsumerProgress();
-		// Download the engines in the wanted dir that are needed to run the model
-		// defined by the model ID.
-		// This method prints information about the total progress of the download and of the 
-		// particular files being downloaded on the terminal.
-		EngineInstall.installEnginesForModelByIDInDir(MODEL_ID, ENGINES_DIR, consumer);
 		// Another option is to launch the download in a separate thread 
 		// and wait for it to end while tracking the progress using the consumer
 		Thread downloadThread = new Thread(() -> {

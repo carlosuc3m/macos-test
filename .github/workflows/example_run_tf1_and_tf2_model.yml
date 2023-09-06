@@ -22,6 +22,10 @@ jobs:
         java-version: '11'
     - name: Build with Maven
       run: mvn install
+    - name: Run ExampleDownloadEngine.java file
+      shell: bash
+      run: |
+        mvn exec:java -Dexec.mainClass=io.bioimage.modelrunner.example.ExampleDownloadEngine
     - name: Run ExampleLoadTensorflow1Tensorflow2.java file
       shell: bash
       run: |
