@@ -21,13 +21,12 @@ jobs:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '11'
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn package shade:shade
     - name: Run ExampleDownloadEngine.java file
       shell: bash
       run: |
         mvn exec:java -Dexec.mainClass=io.bioimage.modelrunner.example.ExampleDownloadEngine
     - name: Copy new file
-      shell: bash
       run: |
         # Specify the source file and destination directory
         SOURCE_FILE=dl-modelrunner-tensorflow-2b-0.3.3.jar
