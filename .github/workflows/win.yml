@@ -21,7 +21,7 @@ jobs:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '11'
     - name: Build with Maven
-      run: mvn package install
+      run: mvn clean install
     - name: Run ExampleDownloadEngine.java file
       shell: bash
       run: |
@@ -40,4 +40,4 @@ jobs:
     - name: Run ExampleLoadTensorflow1Tensorflow2.java file
       shell: bash
       run: |
-        mvn exec:java -Dexec.mainClass=io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
+        java -cp target/classes io.bioimage.modelrunner.example.ExampleLoadTensorflow1Tensorflow2
