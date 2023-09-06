@@ -87,8 +87,8 @@ public class ExampleDownloadEngine {
 				// In this case, the engine downloaded is defined independently from any model
 				String engine = "tensorflow";
 				String version = "2.7.0";
-				boolean gpu = true;
-				boolean cpu = false;
+				boolean gpu = false;
+				boolean cpu = true;
 				List<DeepLearningVersion> dlv = 
 						AvailableEngines.getEnginesForOsByParams(engine, version, cpu, gpu);
 				if (dlv.size() == 0)
