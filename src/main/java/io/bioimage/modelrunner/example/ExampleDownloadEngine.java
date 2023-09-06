@@ -81,13 +81,14 @@ public class ExampleDownloadEngine {
 		TwoParameterConsumer<String, Double> consumer = DownloadTracker.createConsumerProgress();
 		// Another option is to launch the download in a separate thread 
 		// and wait for it to end while tracking the progress using the consumer
+		System.out.println("HERE: " + ENGINES_DIR)
 		Thread downloadThread = new Thread(() -> {
 			try {
 				// In this case, the engine downloaded is defined independently from any model
 				String engine = "tensorflow";
 				String version = "2.7.0";
 				boolean gpu = true;
-				boolean cpu = true;
+				boolean cpu = false;
 				List<DeepLearningVersion> dlv = 
 						AvailableEngines.getEnginesForOsByParams(engine, version, cpu, gpu);
 				if (dlv.size() == 0)
