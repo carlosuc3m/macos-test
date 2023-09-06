@@ -32,7 +32,7 @@ jobs:
         SOURCE_FILE=dl-modelrunner-tensorflow-2b-0.3.3.jar
         if [ "$RUNNER_OS" == "Windows" ]; then
           DESTINATION_DIR=engines\tensorflow-2.7.0-0.4.0-windows-x86_64-cpu
-          copy "$SOURCE_FILE" "$DESTINATION_DIR\"
+          copy "$SOURCE_FILE" "$DESTINATION_DIR\\"
         elif [ "$RUNNER_OS" == "MacOS" ]; then
           DESTINATION_DIR=engines/tensorflow-2.7.0-0.4.0-macosx-x86_64-cpu
           cp -f "$SOURCE_FILE" "$DESTINATION_DIR/"
